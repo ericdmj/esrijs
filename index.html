@@ -40,10 +40,45 @@
           index: 2
         });
 
-        // builds basemap gallery using selected basemaps
+        // Custom Basemap List
+        const customBasemaps = [
+            new Basemap({
+                portalItem: {
+                    id: "67ab7f7c535c4687b6518e6d2343e8a2"  // Ocean Basemap ID
+                },
+                thumbnailUrl: "https://www.arcgis.com/sharing/rest/content/items/67ab7f7c535c4687b6518e6d2343e8a2/info/thumbnail/thumbnail1561651100093.jpeg" // Correct URL for thumbnail
+            }),
+            new Basemap({
+                portalItem: {
+                    id: "826498a48bd0424f9c9315214f2165d4"  // Colored Pencil Basemap ID
+                },
+                thumbnailUrl: "https://www.arcgis.com/sharing/rest/content/items/826498a48bd0424f9c9315214f2165d4/info/thumbnail/thumbnail1580490854424.jpeg"
+            }),
+            new Basemap({
+                portalItem: {
+                    id: "f35ef07c9ed24020aadd65c8a65d3754"  // Modern Antique Basemap ID
+                },
+                thumbnailUrl: "https://www.arcgis.com/sharing/rest/content/items/f35ef07c9ed24020aadd65c8a65d3754/info/thumbnail/thumbnail1584383047375.jpeg"
+            }),
+            new Basemap({
+                portalItem: {
+                    id: "867895a71a1840399476fc717e76bb43"  // Mid-Century Basemap ID
+                },
+                thumbnailUrl: "https://www.arcgis.com/sharing/rest/content/items/867895a71a1840399476fc717e76bb43/info/thumbnail/thumbnail1563382006810.jpeg"
+            }),
+            new Basemap({
+                portalItem: {
+                    id: "75a3ce8990674a5ebd5b9ab66bdab893"  // Newspaper Basemap ID
+                },
+                thumbnailUrl: "https://www.arcgis.com/sharing/rest/content/items/75a3ce8990674a5ebd5b9ab66bdab893/info/thumbnail/thumbnail1563382193586.jpeg"
+            })
+        ];
+
+        // builds basemap gallery using custom basemaps
         const basemapGallery = new BasemapGallery({
           view: view,
-          source: [Basemap.fromId("arcgis-oceans"),Basemap.fromId("arcgis-colored-pencil"),Basemap.fromId("arcgis-modern-antique"),Basemap.fromId("arcgis-midcentury"),Basemap.fromId("arcgis-newspaper")] // autocasts to LocalBasemapsSource
+          source: customBasemaps
+          // source: [Basemap.fromId("arcgis-oceans"),Basemap.fromId("arcgis-colored-pencil"),Basemap.fromId("arcgis-modern-antique"),Basemap.fromId("arcgis-midcentury"),Basemap.fromId("arcgis-newspaper")] // autocasts to LocalBasemapsSource
         });
 
         // Create an Expand instance for the basemap gallery and set the content
